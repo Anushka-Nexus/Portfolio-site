@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* --- BRAND COLORS --- */
+    --primary-clr: #0D1F2F;
+    /* Navy → headings, navbar, footer */
+    --secondary-clr: #A26D5D;
+    /* Brown → buttons, CTAs */
+
+    /* --- ACCENT COLORS --- */
+    --accent-clr: #6C8E6A;
+    /* Spruce → hover, highlights */
+    --accent-light-clr: #9BB8AE;
+    /* Green → badges, soft sections */
+
+    /* --- BACKGROUND & TEXT --- */
+    --bg-clr: #DBD4C5;
+    /* Beige → main background */
+    --text-clr: #1A1A1A;
+    /* Main readable text */
+    --text-light-clr: #FFFFFF;
+    /* Text on dark areas */
+}
+
+/*background color classes */
+.bg-primary {
+    background: var(--primary-clr);
+}
+
+.bg-secondary {
+    background: var(--secondary-clr);
+}
+
+.bg-accent {
+    background: var(--accent-clr);
+}
+
+.bg-accent-light {
+    background: var(--accent-light-clr);
+}
+
+.bg-main {
+    background: var(--bg-clr);
+}
+
+.bg-white {
+    background: #fff;
+}
+
+/* text color classes */
+.text-primary {
+    color: var(--primary-clr);
+}
+
+.text-secondary {
+    color: var(--secondary-clr);
+}
+
+.text-accent {
+    color: var(--accent-clr);
+}
+
+.text-accent-light {
+    color: var(--accent-light-clr);
+}
+
+.text-main {
+    color: var(--text-clr);
+}
+
+.text-light {
+    color: var(--text-light-clr);
+}
+
+/* border classes */
+.border-primary {
+    border: 1px solid var(--primary-clr);
+}
+
+.border-secondary {
+    border: 1px solid var(--secondary-clr);
+}
+
+.border-accent {
+    border: 1px solid var(--accent-clr);
+}

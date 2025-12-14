@@ -23,7 +23,10 @@ const ProjectSchema = new mongoose.Schema({
     stack: [String],
 
     // Project image    
-    imageUrl: String,
+    image: {
+        type:String,
+        required:true
+    },
 
     // Live demo link  
     liveUrl: {

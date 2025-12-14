@@ -4,24 +4,29 @@ import { UserModel } from "../Models/UserModel.js"
 import bcrypt from "bcrypt";
 import dotenv from "dotenv"
 
-const createAdmin = async (req, res) => {
+
+dotenv.config({ path: "./config.env" })
+
+// const createAdmin = async (req, res) => {
+        
+//      await mongoose.connect(process.env.DATABASE_CONNECTION_STRING)
+//         const adminexist = await UserModel.findOne({ role: "admin" })
+
+//         if (adminexist)  return console.log("admin exist!")
+
+//         const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
+
+//         await UserModel.create({
+//             email: process.env.ADMIN_EMAIL,
+//             password: hashedPassword,
+//             role: "admin"
+//         })
+
+//         res.status(201).json({message:"Amin created successfully!"})
+
    
-        const adminexist = await UserModel.findOne({ role: "admin" })
-
-        if (adminexist)  return console.log("admin exist!")
-
-        const hashedPassword = await bcrypt.hash(process.env.ADMIN_PASSWORD, 12)
-
-        await User.create({
-            email: process.env.ADMIN_EMAIL,
-            password: hashedPassword,
-            role: "admin"
-        })
-
-        res.status(201).json({message:"Amin created successfully!"})
-
-   
-}
+// }
+// createAdmin()
 
 const loginAdmin=async(req,res)=>{
     try{

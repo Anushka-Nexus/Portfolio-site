@@ -3,13 +3,13 @@ import nodemailer from "nodemailer"
 import { VisitorModel } from "../Models/VisitorModel.js";
 
 const transporter = nodemailer.createTransport({
-   host: "smtp.gmail.com",
-   port: 465,
-   secure: true,       // true for port 465
-   auth: {
-      user: process.env.USER_EMAIL,
-      pass: process.env.USER_PASSKEY,
-   },
+  host: "smtp.gmail.com",
+  port: 465,
+  secure: true,       // true for port 465
+  auth: {
+    user: process.env.USER_EMAIL,
+    pass: process.env.USER_PASSKEY,
+  },
 });
 
 
@@ -17,7 +17,7 @@ const StoreVisitor = async (req, res) => {
   try {
     const { name, email, contact, message, feedback } = req.body;
 
-    if (!name || !email ||!contact||!message||!feedback) {
+    if (!name || !email || !contact || (!message && !feedback)) {
       return res.status(400).json({ message: "Please fill all the fields" });
     }
 
@@ -30,14 +30,9 @@ const StoreVisitor = async (req, res) => {
     });
 
     await newVisitor.save();
-
-    res.status(201).json({ 
-      message: "Visitor saved successfully",
-      data: newVisitor
-    })
-
+     
     //sending an thank you email to visitor
-     if (email) { 
+    if (email) {
       await transporter.sendMail({
         from: `${process.env.USER_EMAIL}`,
         to: email,
@@ -49,13 +44,20 @@ const StoreVisitor = async (req, res) => {
           <br/>
           <p>Regards,<br/>Anushka</p>
         `
-      });
+      })
     }
+
+    res.status(201).json({
+      message: "Visitor saved successfully",
+      data: newVisitor
+    })
+
+    
 
   } catch (err) {
     //server error
-    res.status(500).json({ message: "Server error" },err);
+    res.status(500).json({ message: "Server error" }, err);
   }
 }
 
-export {StoreVisitor}
+export { StoreVisitor }

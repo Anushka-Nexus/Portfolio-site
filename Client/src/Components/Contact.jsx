@@ -52,6 +52,9 @@ const ContactForm = () => {
         {/* Email */}
         <input type="email" name="email" placeholder="Enter a valid email address" value={form.email} onChange={handleChange}
           className="w-full border border-gray-300 p-3 mb-4 rounded-sm  placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--secondary-clr)]" />
+        {/* contact */}
+        <input type="tel" name="contact" placeholder="Enter your contact number" value={form.contact} onChange={handleChange}
+         className="w-full border border-gray-300 p-3 mb-4 rounded-sm placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--secondary-clr)]" />
 
         {/* Message */}
         <textarea name="message" placeholder="Enter your message" rows="4" value={form.message} onChange={handleChange}

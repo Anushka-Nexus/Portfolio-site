@@ -1,6 +1,9 @@
 import express from "express"
 import nodemailer from "nodemailer"
 import { VisitorModel } from "../Models/VisitorModel.js";
+import dotenv from "dotenv"
+
+dotenv.config({ path: "./config.env" })
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -10,7 +13,8 @@ const transporter = nodemailer.createTransport({
     user: process.env.USER_EMAIL,
     pass: process.env.USER_PASSKEY,
   },
-});
+  service:"gmail"
+})
 
 
 const StoreVisitor = async (req, res) => {
@@ -32,7 +36,8 @@ const StoreVisitor = async (req, res) => {
     await newVisitor.save();
      
     //sending an thank you email to visitor
-    if (email) {
+   try{
+     if (email) {
       await transporter.sendMail({
         from: `${process.env.USER_EMAIL}`,
         to: email,
@@ -46,6 +51,10 @@ const StoreVisitor = async (req, res) => {
         `
       })
     }
+   }
+    catch (mailErr) {
+  console.log("MAIL ERROR:", mailErr.message);
+}
 
     res.status(201).json({
       message: "Visitor saved successfully",
@@ -56,7 +65,7 @@ const StoreVisitor = async (req, res) => {
 
   } catch (err) {
     //server error
-    res.status(500).json({ message: "Server error" }, err);
+    res.status(500).json({ message: "Server error",error:err.message });
   }
 }
 

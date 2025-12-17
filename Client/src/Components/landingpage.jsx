@@ -15,7 +15,7 @@ function Homepage() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/Videos/bg.mp4" type="video/mp4" />
+          <source src="/Videos/bg1.mp4" type="video/mp4" />
         </video>
         {/* overlay */}
         <div className="absolute inset-0 bg-black/70"></div>

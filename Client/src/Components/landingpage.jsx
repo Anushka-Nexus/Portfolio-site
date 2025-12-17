@@ -1,4 +1,6 @@
 import React from 'react'
+import { Home,Briefcase,Wrench,Award,HelpCircle,Mail,BookOpen} from "lucide-react";
+
 
 function Homepage() {
   return (
@@ -24,7 +26,7 @@ function Homepage() {
             <p className="text-lg text-light mt-4 px-3 py-3 mx-6  rounded-xl border border-light">
               ● Available for <b>projects</b>
             </p>
-            <div className="h-60 bg-white rounded-2xl my-4 mx-6 ">img daalni h yha pr baki h</div>
+            <div className="h-60 bg-white rounded-2xl my-4 mx-6 image-wrapper">img daalni h yha pr baki h</div>
 
             <div className='flex flex-col gap-5'>
               <h2 className="text-4xl text-center font-semibold great-vibes-regular text-white">Anushka Shende</h2>
@@ -40,6 +42,7 @@ function Homepage() {
             </div>
 
           </div>
+          {/* center scroll part */}
           <div className='center-content min-h-screen mx-4 my-4'>
             <div className='flex gap-10 flex-col'>
               <div>
@@ -64,49 +67,40 @@ function Homepage() {
               </div>
 
             </div>
+            {/* menu */}
             <div className="fixed right-6 top-1/2 -translate-y-1/2 bg-primary/25 backdrop-blur-xl rounded-xl py-4 px-2 flex flex-col gap-5">
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/home.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a href="" >
+                   <Home size={20} color="white" />
                 </a>
               </div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/work.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a href="">
+                <Briefcase size={20} color="white" />
+                </a>
+              </div>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a href="">
+                  <Wrench size={20} color="white" />
+                </a>
+                </div>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a  href="">
+                  <Award size={20} color="white" />
+                </a>
+                </div>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a  href="">
+                  <HelpCircle size={20} color="white" />
+                </a>
+                </div>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a href="">
+                  <Mail size={20} color="white" />
                 </a></div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/skills.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
-                </a></div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/testimonial.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
-                </a></div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/chat.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
-                </a></div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/contact.png"
-                    class="social-media-icons rounded-full"></img>
-                </a></div>
-              <div className="w-10 h-10 bg-white/20 rounded-full">
-                <a
-                  href=""><img
-                    src="./Icons/blog.png"
-                    class="social-media-icons rounded-circle position-relative "></img>
+              <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                <a  href="">
+                  <BookOpen size={20} color="white" />
                 </a></div>
             </div>
 

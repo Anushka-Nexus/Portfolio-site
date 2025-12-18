@@ -19,14 +19,14 @@ const transporter = nodemailer.createTransport({
 
 const StoreVisitor = async (req, res) => {
   try {
-    const { name, email, contact, message, feedback } = req.body;
+    const { email, contact, message, feedback } = req.body;
 
-    if (!name || !email || !contact || (!message && !feedback)) {
+    if ( !email || !contact || (!message && !feedback)) {
       return res.status(400).json({ message: "Please fill all the fields" });
     }
 
     const newVisitor = new VisitorModel({
-      name,
+    
       email,
       contact,
       message,
@@ -43,7 +43,7 @@ const StoreVisitor = async (req, res) => {
         to: email,
         subject: "Thanks for contacting me!",
         html: `
-          <p>Hi <b>${name}</b>,</p>
+          <p>Hi <b>User</b>,</p>
           <p>Thank you for reaching out! I received your message and I’ll get back to you soon.</p>
           <p><i>Your message:</i> ${message || feedback}</p>
           <br/>

@@ -2,10 +2,10 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-const ContactForm = () => {
+const ContactPage = () => {
   const emailRegex = /^\S+@\S+\.\S+$/;
   const [form, setForm] = useState({
-    name: '',
+
     email: '',
     contact: '',
     message: '',
@@ -31,7 +31,7 @@ const ContactForm = () => {
 
       if (sendresult.status === 201) {
         alert("Message sent successfully!");
-        setForm({ name: "", email: "", contact: "", message: "", feedback: "" })
+        setForm({ email: "", contact: "", message: "", feedback: "" })
       } else {
         throw ("Something went wrong")
       }
@@ -41,42 +41,62 @@ const ContactForm = () => {
   }
   return (
     <>
-      <form action="" onSubmit={handleSubmit}>
+      <div className='center-content'>
+        <div className='mern-card'>
+          <h2 className="mern-title  mb-8" style={{ lineHeight: "3.5rem" }}>
+            Contact For <br /> Work
+          </h2>
+          <form action="" onSubmit={handleSubmit}>
+            <div className="mb-6">
+              <label className="text-sm text-gray-300">Your Email</label>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full bg-transparent border-b border-white/20 py-2 mt-2 outline-none input-focus"
+                value={form.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="mb-6">
+              <label className="text-sm text-gray-300">Your Phone</label>
+              <input
+                type="tel"
+                placeholder="Enter your phone number"
+                className="w-full bg-transparent border-b border-white/20 py-2 mt-2 outline-none input-focus"
+                value={form.contact}
+                 onChange={handleChange}
+              />
+            </div>
 
-        <h2 className="text-2xl font-semibold mb-6" style={{ color: "var(--primary-clr)" }} > Let’s Connect </h2>
-
-        {/* Name */}
-        <input name="name" type='text' placeholder="Enter your Name" value={form.name} onChange={handleChange}
-          className="w-full border border-gray-300 p-3 mb-4 rounded-sm  placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--secondary-clr)]" />
-
-        {/* Email */}
-        <input type="email" name="email" placeholder="Enter a valid email address" value={form.email} onChange={handleChange}
-          className="w-full border border-gray-300 p-3 mb-4 rounded-sm  placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--secondary-clr)]" />
-        {/* contact */}
-        <input type="tel" name="contact" placeholder="Enter your contact number" value={form.contact} onChange={handleChange}
-         className="w-full border border-gray-300 p-3 mb-4 rounded-sm placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--secondary-clr)]" />
-
-        {/* Message */}
-        <textarea name="message" placeholder="Enter your message" rows="4" value={form.message} onChange={handleChange}
-          className="w-full border border-gray-300 p-3 mb-4 rounded-sm placeholder-gray-500 bg-white focus:outline-none focus:border-[var(--accent-clr)]" />
-
-        {/* Feedback */}
-        <textarea name="feedback" placeholder="Enter your feedback" rows="3" value={form.feedback} onChange={handleChange}
-          className="w-full border border-gray-300 p-3 mb-4 rounded-sm  placeholder-gray-500 bg-white focus:outline-none   focus:border-[var(--accent-light-clr)]"
-        />
-
-        {/* Submit Button */}
-        <button
-          type="submit" className="px-6 py-2 border rounded-sm transition  hover:bg-gray-100"
-          style={{
-            borderColor: "var(--secondary-clr)",
-            color: "var(--secondary-clr)"
-          }}
-        >
-          Submit
-        </button>
-      </form>
+            {/* Message */}
+            <div className="mb-8">
+              <label className="text-sm text-gray-300">Messenger</label>
+              <textarea
+                rows="3"
+                className="w-full bg-transparent border-b border-white/20 py-2 mt-2 resize-none outline-none input-focus"
+                value={form.message}
+                 onChange={handleChange}
+              ></textarea>
+            </div>
+            <div className="mb-8">
+              <label className="text-sm text-gray-300">Feedback</label>
+              <textarea
+                rows="1"
+                className="w-full bg-transparent border-b border-white/20 py-2 mt-2 resize-none outline-none input-focus"
+                value={form.feedback}
+                 onChange={handleChange}
+              ></textarea>
+            </div>
+            <button className="flex items-center justify-between gap-3 bg-white/70 text-black px-4 py-3 rounded-full font-medium hover:scale-105 transition">
+              Get Started
+              <span className="w-8 h-8 flex items-center justify-center rounded-full bg-primary text-white">
+                →
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
     </>
   )
 }
-export default ContactForm
+export default ContactPage

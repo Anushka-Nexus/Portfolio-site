@@ -12,8 +12,9 @@
     /* --- ACCENT COLORS --- */
     --accent-clr: #6C8E6A;
     /* Spruce → hover, highlights */
-    --accent-light-clr: #9BB8AE;
+    --accent-light-clr: #81a6ea;
     /* Green → badges, soft sections */
+     --primary-rgb-clr: 13, 31, 47;
 
     /* --- BACKGROUND & TEXT --- */
     --bg-clr: #DBD4C5;
@@ -119,7 +120,7 @@
 }
 /*center*/
 .center-content {
-  margin-left: 22rem;   /* space for left card */
+  margin-left: 24rem;   /* space for left card */
   margin-right: 8rem;   /* space for right icons */
   padding: 4rem;
 }
@@ -181,11 +182,205 @@
     padding: 0.4rem 0.9rem;
   }
 
-  /* icons (should be hide) */
+  /* icons (should be hide)*/
   .fixed.right-6 {
     display: none;
   }
 }
+/* cards */
+.stats-card {
+ 
+  background: var(--primary-clr);
+  filter: brightness(0.8);
+  backdrop-filter: blur(14px);
+  border-radius: 1.25rem;
+  padding: 2rem 2rem;
+  width: 25rem;
+}
+
+.stats-label {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
+}
+
+.stats-value {
+  font-size: 4rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.stats-sub {
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* experience  */
+.exp-item {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.role {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+
+.exp-item:hover .role {
+  color:var(--accent-light-clr); 
+   border-bottom: 1px solid var(--accent-light-clr);
+}
+
+.company {
+  font-size: 1.2rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.mern-card {
+  background: var(--primary-clr);
+  backdrop-filter: blur(18px);
+  border-radius: 2rem;
+  padding: 3.5rem 4rem;
+  max-width: 45rem;
+}
+
+.mern-card-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 2rem;
+}
+
+.mern-card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.mern-icon {
+  width: 3rem;
+  height: 3rem;
+  background: linear-gradient(135deg, var(--primary-clr),var(--accent-light-clr));
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.mern-title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem;
+ 
+ 
+}
+.skill-list li{
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+.skill-list li::before {
+  content: "●";
+  position: absolute;
+  left: 0;
+  color:var(--accent-light-clr);
+}
+
+.mern-faded {
+  font-size: 3.2rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.15);
+  line-height: 1.2;
+}
+.input-focus:focus {
+  border-color: var(--accent-light-clr);
+  outline:none;
+}
+.Aiassistant-outerbox {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 10;
+}
+
+/* Button */
+.assist-btn {
+  background: var(--primary-clr);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Assistant Box */
+.assistant-box {
+  width: 400px;
+  height: 500px;
+  background: rgba(var(--primary-rgb-clr), 0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+.assistant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--accent-light-clr);
+  color: white;
+}
+
+/* Body */
+.assistant-body {
+  flex: 1;
+  padding: 1rem;
+  color: rgba(255,255,255,0.85);
+  font-size: 0.9rem;
+  overflow-y: auto;
+}
+
+/* Footer */
+.assistant-footer {
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.assistant-footer input {
+  flex: 1;
+  background: rgba(var(--primary-rgb-clr),0.1);
+  border: none;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 0.4rem;
+}
+
+.assistant-footer button {
+  background: var(--accent-light-clr);
+  border: none;
+  padding: 0.5rem 1rem;
+  color:black;
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
 
 
 

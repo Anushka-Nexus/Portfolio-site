@@ -1,4 +1,5 @@
 todo.txt
 Server/node_modules/
-Server/config.env
+ Server/config.env
 *.env
+deletedcode.txt

@@ -2,14 +2,11 @@
 import mongoose from "mongoose";
 
 const VisitorSchema = new mongoose.Schema({
-    name: { 
-        type: String,
-         required: true, 
-         trim: true
-         },
+    
     email: { type: String, 
         trim: true,
-         lowercase: true
+         lowercase: true,
+         required :true
          },
     contact: { 
         type: String,

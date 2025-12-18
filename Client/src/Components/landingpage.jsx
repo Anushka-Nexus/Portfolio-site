@@ -1,5 +1,11 @@
 import React from 'react'
-import { Home,Briefcase,Wrench,Award,HelpCircle,Mail,BookOpen} from "lucide-react";
+import { Home, Briefcase, Wrench, Award, HelpCircle, Mail, BookOpen } from "lucide-react";
+import StatsCard from './ReusableComponents/Card';
+import Workpage from './Work.jsx';
+import { Skillspage } from './Skill.jsx';
+import { Link } from 'react-router-dom';
+import ContactPage from './Contact.jsx';
+import AiAssistant from './AiChat.jsx';
 
 
 function Homepage() {
@@ -29,10 +35,22 @@ function Homepage() {
             <div className="h-60 bg-white rounded-2xl my-4 mx-6 image-wrapper">img daalni h yha pr baki h</div>
 
             <div className='flex flex-col gap-5'>
-              <h2 className="text-4xl text-center font-semibold great-vibes-regular text-white">Anushka Shende</h2>
-              <p className="text-xl text-white/60 text-center">
-                shendeanushka1@gmail.com
-              </p>
+              <h2 className="text-4xl text-center font-semibold great-vibes-regular text-white/95">Anushka Shende</h2>
+              <div>
+                <p className="text-xl text-white/80 text-center">
+                  shendeanushka1@gmail.com
+                </p>
+
+                <p className='text-center text-white/80'>
+                  Open for Remote Work
+
+                </p>
+                <p className='text-center text-white/80'>
+                  Nagpur, India
+
+                </p>
+
+              </div>
 
               <div className='mx-4'>
                 <button className=" w-full bg-white/25 text-white py-4 rounded-full text-lg">
@@ -65,47 +83,67 @@ function Homepage() {
                 <span className=" rounded-full  py-1 px-4  bg-white/15">JWT Authentication</span>
                 <span className=" rounded-full  py-1 px-4  bg-white/15">Admin Dashboard </span>
               </div>
+             
 
+              </div>
+               <div className="flex gap-10 mt-14">
+                <StatsCard
+                  label="MERN Projects"
+                  value="10+"
+                  sub="Auth · APIs · Admin"
+                />
+
+                <StatsCard
+                  label="Success Rate"
+                  value="100%"
+                  sub="All projects completed"
+                />
+              </div>
             </div>
             {/* menu */}
             <div className="fixed right-6 top-1/2 -translate-y-1/2 bg-primary/25 backdrop-blur-xl rounded-xl py-4 px-2 flex flex-col gap-5">
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
                 <a href="" >
-                   <Home size={20} color="white" />
+                  <Home size={20} color="white" />
                 </a>
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
+                
                 <Briefcase size={20} color="white" />
-                </a>
+                
+                 
+                     
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
                 <a href="">
                   <Wrench size={20} color="white" />
                 </a>
-                </div>
+              </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a  href="">
+                <a href="">
                   <Award size={20} color="white" />
                 </a>
-                </div>
+              </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a  href="">
+                <a href="">
                   <HelpCircle size={20} color="white" />
                 </a>
-                </div>
+              </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
                 <a href="">
                   <Mail size={20} color="white" />
                 </a></div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a  href="">
+                <a href="">
                   <BookOpen size={20} color="white" />
                 </a></div>
             </div>
 
-          </div>
-
+         
+         <Workpage/>
+         <Skillspage/>
+         <ContactPage/>
+         <AiAssistant/>
 
         </div>
       </div>

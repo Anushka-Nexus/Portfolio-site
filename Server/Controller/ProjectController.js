@@ -123,4 +123,18 @@ const UpdateProject = async (req, res) => {
     }
 }
 
-export { AddProject, RemoveProject ,UpdateProject }
+const GetAllProjects=async(req,res)=>{
+     try {
+    const projects = await ProjectModel.find().sort({ createdAt: -1 });
+    res.status(200).json({
+      success: true,
+      projects
+    })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: error.message
+    });
+  }
+}
+export { AddProject, RemoveProject ,UpdateProject ,GetAllProjects}

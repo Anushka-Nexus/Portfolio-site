@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 :root {
     /* --- BRAND COLORS --- */
     --primary-clr: #0D1F2F;
@@ -380,7 +383,148 @@
   border-radius: 0.4rem;
   cursor: pointer;
 }
+.projects-section {
+  margin-top: 6rem;
+  max-width: 900px;
+}
 
+.section-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 3rem;
+  font-weight: 500;
+  color: white;
+  margin-bottom: 3rem;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.project-card {
+  background: rgba(var(--primary-rgb-clr),0.4);
+  backdrop-filter: blur(14px);
+  border-radius: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.35s ease;
+}
+
+.project-card:hover {
+  border-color:var(--accent-light-clr);
+  background: rgba(var(--primary-rgb-clr),0.75);
+  transform: scale(1.03);
+}
+
+.project-title {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.project-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.project-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 1px;
+  background: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+.project-links a:hover::after {
+  width: 100%;
+}
+
+
+.tech-section {
+  padding: 5rem 1.5rem;
+  color: white;
+}
+
+.tech-carousel {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 2rem;
+}
+
+.tech-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.tech-card {
+  min-width: 320px;
+  height: 280px;
+  background: rgba(var(--primary-rgb-clr), 0.4);
+  backdrop-filter: blur(18px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-6px);
+}
+
+.tech-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-icon {
+  width: 80px;
+  height: 80px;
+  background: black;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-card p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+}
+
+/* Bottom progress bar */
+.tech-progress {
+  height: 4px;
+  background: rgba(255,255,255,0.2);
+  margin-top: 2rem;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tech-progress span {
+  display: block;
+  height: 100%;
+  width: 30%;
+  background: white;
+}
 
 
 

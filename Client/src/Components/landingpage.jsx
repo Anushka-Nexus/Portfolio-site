@@ -1,12 +1,13 @@
 import React from 'react'
-import { Home, Briefcase, Wrench, Award, HelpCircle, Mail, BookOpen } from "lucide-react";
+import { Home, Briefcase, Wrench, Award, HelpCircle, Mail, BookOpen, LogIn } from "lucide-react";
 import StatsCard from './ReusableComponents/Card';
 import Workpage from './Work.jsx';
 import { Skillspage } from './Skill.jsx';
 import { Link } from 'react-router-dom';
 import ContactPage from './Contact.jsx';
 import AiAssistant from './AiChat.jsx';
-
+import Project from './Project.jsx';
+import { FAQs } from './Faqs.jsx';
 
 function Homepage() {
   return (
@@ -108,14 +109,12 @@ function Homepage() {
                 </a>
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                
+                <a href="#work">
                 <Briefcase size={20} color="white" />
-                
-                 
-                     
+                </a>                 
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
+                <a href="#skills">
                   <Wrench size={20} color="white" />
                 </a>
               </div>
@@ -125,23 +124,29 @@ function Homepage() {
                 </a>
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
+                <a href="#Faqs">
                   <HelpCircle size={20} color="white" />
                 </a>
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
+                <a href="#contact">
                   <Mail size={20} color="white" />
                 </a></div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
-                  <BookOpen size={20} color="white" />
-                </a></div>
+                
+                 <a href=''> <BookOpen size={20} color="white" /></a>
+                </div>
+                <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
+                
+                  <a href=''><LogIn size={20} color="white" /></a>
+                </div>
             </div>
 
          
          <Workpage/>
+         <Project/>
          <Skillspage/>
+         <FAQs/>
          <ContactPage/>
          <AiAssistant/>
 

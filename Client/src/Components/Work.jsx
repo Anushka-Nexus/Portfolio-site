@@ -4,9 +4,10 @@ function Workpage() {
   return (
     <>
 
-      <div className='center-content'>
+     <section id='work'>
+       <div className='center-content'>
         <p className="text-lg text-white/70 ">
-          ● Experience
+          ● Work
         </p>
         <h1 className="text-5xl  leading-tight font-medium my-10">
 
@@ -28,6 +29,7 @@ function Workpage() {
         
 
       </div>
+     </section>
     </>
   )
 }

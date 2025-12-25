@@ -41,7 +41,8 @@ const ContactPage = () => {
   }
   return (
     <>
-      <div className='center-content'>
+      <section id='contact'>
+        <div className='center-content'>
         <div className='mern-card'>
           <h2 className="mern-title  mb-8" style={{ lineHeight: "3.5rem" }}>
             Contact For <br /> Work
@@ -96,6 +97,7 @@ const ContactPage = () => {
           </form>
         </div>
       </div>
+      </section>
     </>
   )
 }

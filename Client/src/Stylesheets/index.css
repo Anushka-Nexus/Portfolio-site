@@ -27,7 +27,7 @@ html {
     --text-light-clr: #FFFFFF;
     /* Text on dark areas */
 
-    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Rajdhani', sans-serif !important;
 }
 
 /*background color classes */

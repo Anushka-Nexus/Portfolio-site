@@ -3,11 +3,12 @@ import { Home, Briefcase, Wrench, Award, HelpCircle, Mail, BookOpen, LogIn } fro
 import StatsCard from './ReusableComponents/Card';
 import Workpage from './Work.jsx';
 import { Skillspage } from './Skill.jsx';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 import ContactPage from './Contact.jsx';
 import AiAssistant from './AiChat.jsx';
 import Project from './Project.jsx';
 import { FAQs } from './Faqs.jsx';
+import { Testimonials } from './Testimonial.jsx';
 
 function Homepage() {
   return (
@@ -20,12 +21,12 @@ function Homepage() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="fixed inset-0 w-full h-full object-cover -z-10"
         >
           <source src="/Videos/bg1.mp4" type="video/mp4" />
         </video>
         {/* overlay */}
-        <div className="absolute inset-0 bg-black/70"></div>
+        <div className="absolute inset-0 bg-black/70 -z-10"></div>
         {/* Layout */}
         <div className="relative z-10 min-h-screen text-white">
           {/* left layout */}
@@ -119,7 +120,7 @@ function Homepage() {
                 </a>
               </div>
               <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
-                <a href="">
+                <a href="#Testimonials">
                   <Award size={20} color="white" />
                 </a>
               </div>
@@ -138,7 +139,10 @@ function Homepage() {
                 </div>
                 <div className="w-10 h-10 bg-white/20 rounded-full  flex items-center justify-center">
                 
-                  <a href=''><LogIn size={20} color="white" /></a>
+                  <Link to={"/adminlogin"}>
+                   <LogIn size={20} color="white" />
+                   </Link>
+                 
                 </div>
             </div>
 
@@ -146,6 +150,7 @@ function Homepage() {
          <Workpage/>
          <Project/>
          <Skillspage/>
+         <Testimonials/>
          <FAQs/>
          <ContactPage/>
          <AiAssistant/>

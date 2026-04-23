@@ -55,6 +55,7 @@ const ContactPage = () => {
                 placeholder="Enter your email"
                 className="w-full bg-transparent border-b border-white/20 py-2 mt-2 outline-none input-focus"
                 value={form.email}
+                name='email'
                 onChange={handleChange}
               />
             </div>
@@ -64,6 +65,7 @@ const ContactPage = () => {
                 type="tel"
                 placeholder="Enter your phone number"
                 className="w-full bg-transparent border-b border-white/20 py-2 mt-2 outline-none input-focus"
+                name='contact'
                 value={form.contact}
                  onChange={handleChange}
               />
@@ -76,6 +78,7 @@ const ContactPage = () => {
                 rows="3"
                 className="w-full bg-transparent border-b border-white/20 py-2 mt-2 resize-none outline-none input-focus"
                 value={form.message}
+                name='message'
                  onChange={handleChange}
               ></textarea>
             </div>
@@ -85,6 +88,7 @@ const ContactPage = () => {
                 rows="1"
                 className="w-full bg-transparent border-b border-white/20 py-2 mt-2 resize-none outline-none input-focus"
                 value={form.feedback}
+                name='feedback'
                  onChange={handleChange}
               ></textarea>
             </div>
